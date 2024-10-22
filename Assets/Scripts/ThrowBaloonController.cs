@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ThrowBaloonController : MonoBehaviour
 {
@@ -36,10 +37,16 @@ public class ThrowBaloonController : MonoBehaviour
         playerController = GetComponent<PlayerController>();
 
         SpawnABaloon(baloonSelector.PickRandomBaloonForThrow());
+
     }
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return; // UI elemanýna týklandý, balon býrakýlmayacak
+        }
+
         if (UserInput.IsThrowPressed && canThrow)
         {
             SpriteIndex index = CurrentBaloon.GetComponent<SpriteIndex>();
@@ -65,6 +72,6 @@ public class ThrowBaloonController : MonoBehaviour
         circleCollider = CurrentBaloon.GetComponent<CircleCollider2D>();
         Bounds = circleCollider.bounds;
 
-        playerController.ChangeBoundary(EXTRA_WIDTH);
+        //playerController.ChangeBoundary(EXTRA_WIDTH);
     }
 }

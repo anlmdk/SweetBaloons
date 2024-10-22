@@ -8,6 +8,8 @@ public class BaloonCombiner : MonoBehaviour
 
     private BaloonInformation info;
 
+    public ParticleSystem mergeEffect;
+
     private void Awake()
     {
         info = GetComponent<BaloonInformation>();
@@ -28,6 +30,8 @@ public class BaloonCombiner : MonoBehaviour
 
                     if (thisID > otherID)
                     {
+                        GameManager.Instance.IncreaseScore(info.PointsWhenAnnihilated);
+
                         if (info.BaloonIndex == BaloonSelector.Instance.Baloons.Length - 1)
                         {
                             Destroy(collision.gameObject);
@@ -39,13 +43,16 @@ public class BaloonCombiner : MonoBehaviour
                             GameObject go = Instantiate(SpawnCombinedBaloon(info.BaloonIndex), GameManager.Instance.transform);
                             go.transform.position = middlePosition;
 
+                            ParticleSystem effectInstance = Instantiate(mergeEffect, middlePosition, Quaternion.identity);
+                            effectInstance.Play();
+
                             ColliderInformation informer = go.GetComponent<ColliderInformation>();
 
                             if (informer != null)
                             {
                                 informer.wasCombinedIn = true;
                             }
-
+                            
                             Destroy(collision.gameObject);
                             Destroy(gameObject);
                         }

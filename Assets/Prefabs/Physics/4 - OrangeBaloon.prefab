@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 8357017446780594507}
   - component: {fileID: -1720184825051972342}
   - component: {fileID: 7249394789870257383}
+  - component: {fileID: 1510349930740799177}
   m_Layer: 0
   m_Name: 4 - OrangeBaloon
-  m_TagString: Untagged
+  m_TagString: Baloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaloonIndex: 3
-  PointsWhenAnnihilated: 1
+  PointsWhenAnnihilated: 27
   BaloonMass: 1.35
 --- !u!114 &7249394789870257383
 MonoBehaviour:
@@ -188,5 +189,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d69d3da4bf32d9a4fb1b9dcea974c880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mergeEffect: {fileID: 9157105887693468085, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
+--- !u!114 &1510349930740799177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626744784798542683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056104041227e8c46b38b3cb2e0f7b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

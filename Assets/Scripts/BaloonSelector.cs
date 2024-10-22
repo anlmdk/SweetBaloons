@@ -11,9 +11,8 @@ public class BaloonSelector : MonoBehaviour
     public GameObject[] NoPhysicsBaloons;
 
     // Baþlangýçta spawn olacak maksimum level
-    public int HighestStartingIndex = 3;
+    public int HighestStartingIndex = 4;
 
-    [SerializeField] private Image nextBaloonImage;
     [SerializeField] private Sprite[] baloonSprites;
 
     public GameObject NextBaloon { get; set; }
@@ -54,7 +53,7 @@ public class BaloonSelector : MonoBehaviour
 
             if (randomIndex < baloonSprites.Length)
             {
-                nextBaloonImage.sprite = baloonSprites[randomIndex];
+                GameManager.Instance.nextBaloonImage.sprite = baloonSprites[randomIndex];
             }
         }
     }
