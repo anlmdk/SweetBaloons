@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaloonIndex: 1
-  PointsWhenAnnihilated: 13
+  PointsWhenAnnihilated: 101
   BaloonMass: 1.45
 --- !u!114 &5602741656269007447
 MonoBehaviour:
