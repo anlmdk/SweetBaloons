@@ -1,2 +1,2 @@
 # SweetBaloons
- Like Watermelon Game but with baloons
+ Like watermelon game but with baloons.
